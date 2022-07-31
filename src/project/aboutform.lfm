@@ -1,0 +1,59 @@
+object AboutForm: TAboutForm
+  Left = 727
+  Height = 298
+  Top = 408
+  Width = 447
+  ActiveControl = Button1
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'About NotepadEx'
+  ClientHeight = 298
+  ClientWidth = 447
+  DesignTimePPI = 120
+  OnCreate = FormCreate
+  Position = poMainFormCenter
+  LCLVersion = '2.2.2.0'
+  object Button1: TButton
+    Left = 327
+    Height = 31
+    Top = 250
+    Width = 94
+    Anchors = [akRight, akBottom]
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 21
+    Height = 164
+    Top = 16
+    Width = 404
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = False
+    Caption = 'This Notepad clone is written in Freepascal using Lazarus.'#13#10#13#10'It offers the exact same features as Notepad plus :'#13#10'- Unlimited Undo/Redo'#13#10'- Auto backup and recovery'#13#10'- A dark theme'#13#10#13#10'Licensed under LGPL, Copyright @Air16 2022'
+    ParentColor = False
+    WordWrap = True
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 20
+    Top = 208
+    Width = 220
+    AutoSize = False
+    Caption = '<version>'
+    ParentColor = False
+  end
+  object WebLink: TLabel
+    Cursor = crArrow
+    Left = 24
+    Height = 20
+    Top = 250
+    Width = 232
+    Caption = 'www.github.com/Air16/NotepadEx'
+    Font.Color = clHotLight
+    Font.Style = [fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    OnClick = WebLinkClick
+  end
+end

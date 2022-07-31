@@ -1,0 +1,598 @@
+object Form1: TForm1
+  Left = 1210
+  Height = 632
+  Top = 440
+  Width = 651
+  ActiveControl = Memo1
+  AlphaBlendValue = 128
+  Caption = 'Form1'
+  ClientHeight = 607
+  ClientWidth = 651
+  DesignTimePPI = 120
+  Menu = MainMenu1
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  Position = poDefaultPosOnly
+  LCLVersion = '2.2.2.0'
+  object Memo1: TWinMemo
+    Left = 0
+    Height = 578
+    Top = 0
+    Width = 650
+    Align = alLeft
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderStyle = bsNone
+    HideSelection = False
+    OnChange = Memo1Change
+    OnKeyDown = Memo1KeyDown
+    OnKeyPress = Memo1KeyPress
+    OnMouseWheelDown = Memo1MouseWheelDown
+    OnMouseWheelUp = Memo1MouseWheelUp
+    ParentFont = False
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+    TabStop = False
+    WantTabs = True
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 29
+    Top = 578
+    Width = 651
+    AutoSize = False
+    Panels = <    
+      item
+        Text = 'Undo buffer'
+        Width = 120
+      end    
+      item
+        Text = 'Autobackup'
+        Width = 50
+      end    
+      item
+        Text = 'Ln & Col'
+        Width = 160
+      end    
+      item
+        Text = 'Zoom Level'
+        Width = 60
+      end    
+      item
+        Text = '<EOF Line char>'
+        Width = 150
+      end    
+      item
+        Text = '<Encoding>'
+        Width = 160
+      end>
+    SimplePanel = False
+    OnResize = StatusBar1Resize
+  end
+  object DarkPanel: TPanel
+    Left = 629
+    Height = 578
+    Top = 0
+    Width = 20
+    BevelOuter = bvNone
+    Caption = 'DarkPanel'
+    ClientHeight = 578
+    ClientWidth = 20
+    Color = clBackground
+    ParentColor = False
+    TabOrder = 2
+    object ButtonPanel: TPanel
+      Left = 0
+      Height = 16
+      Hint = 'Ctrl+M'
+      Top = 562
+      Width = 20
+      Align = alBottom
+      BevelColor = clWindowFrame
+      BevelOuter = bvNone
+      ClientHeight = 16
+      ClientWidth = 20
+      Color = clBlack
+      Font.Color = clMenu
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+      OnClick = ButtonPanelClick
+      OnMouseEnter = ButtonPanelMouseEnter
+      OnMouseLeave = ButtonPanelMouseLeave
+      object ButtonLabel: TLabel
+        Left = 0
+        Height = 18
+        Top = -2
+        Width = 20
+        Align = alBottom
+        Alignment = taCenter
+        AutoSize = False
+        Caption = '...'
+        Font.Color = clMenu
+        Font.Height = 16
+        ParentColor = False
+        ParentFont = False
+        OnClick = ButtonPanelClick
+        OnMouseEnter = ButtonPanelMouseEnter
+        OnMouseLeave = ButtonPanelMouseLeave
+      end
+    end
+    object MemoScrollbar: TWinMemoScrollbar
+      Left = 0
+      Height = 562
+      Top = 0
+      Width = 20
+      Align = alClient
+      BevelOuter = bvNone
+      Caption = 'MemoScrollbar'
+      ClientHeight = 562
+      ClientWidth = 20
+      Color = cl3DDkShadow
+      Enabled = False
+      ParentColor = False
+      TabOrder = 1
+      Theme.NoScroll.Track = clMenuBar
+      Theme.NoScroll.Thumb = clBtnFace
+      Theme.NoScroll.Buttons = clScrollBar
+      Theme.Inactive.Track = clMenuBar
+      Theme.Inactive.Thumb = clScrollBar
+      Theme.Inactive.Buttons = clBtnShadow
+      Theme.Active.Track = clMenuBar
+      Theme.Active.Thumb = clActiveBorder
+      Theme.Active.Buttons = clBtnShadow
+      UpButton.Left = 0
+      UpButton.Height = 24
+      UpButton.Top = 0
+      UpButton.Width = 20
+      UpButton.Align = alTop
+      UpButton.Caption = '▲'
+      UpButton.Color = 1052688
+      UpButton.Enabled = False
+      UpButton.Flat = True
+      UpButton.Font.Color = clScrollBar
+      UpButton.Transparent = False
+      UpButton.ParentFont = False
+      DownButton.Left = 0
+      DownButton.Height = 24
+      DownButton.Top = 538
+      DownButton.Width = 20
+      DownButton.Align = alBottom
+      DownButton.Caption = '▼'
+      DownButton.Color = 1052688
+      DownButton.Enabled = False
+      DownButton.Flat = True
+      DownButton.Font.Color = clScrollBar
+      DownButton.Transparent = False
+      DownButton.ParentFont = False
+      TrackPanel.Left = 0
+      TrackPanel.Height = 514
+      TrackPanel.Top = 24
+      TrackPanel.Width = 20
+      TrackPanel.Align = alClient
+      TrackPanel.BevelOuter = bvNone
+      TrackPanel.ClientHeight = 514
+      TrackPanel.ClientWidth = 20
+      TrackPanel.Color = clMenuBar
+      TrackPanel.ParentColor = False
+      TrackPanel.TabOrder = 0
+      ThumbShape.Left = -3
+      ThumbShape.Height = 96
+      ThumbShape.Top = 40
+      ThumbShape.Width = 65
+      ThumbShape.Anchors = [akTop, akBottom]
+      ThumbShape.Brush.Color = clBtnFace
+      ThumbShape.Pen.Cosmetic = False
+      ThumbShape.Pen.EndCap = pecSquare
+      ThumbShape.Pen.Style = psClear
+      ThumbShape.Pen.Width = 0
+      ThumbShape.Visible = False
+      ThinnerInactiveThumb = False
+      Memo = Memo1
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 216
+    Top = 33
+    object MenuFile: TMenuItem
+      Caption = '&File'
+      object MenuItem20: TMenuItem
+        Action = FileNew1
+      end
+      object MenuItem21: TMenuItem
+        Action = FileNewWindow1
+      end
+      object MenuItem2: TMenuItem
+        Action = FileOpen1
+      end
+      object MenuItem3: TMenuItem
+        Action = FileSave1
+      end
+      object MenuItem19: TMenuItem
+        Action = FileSaveAs1
+      end
+      object Separator4: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem4: TMenuItem
+        Action = FilePageSetup1
+      end
+      object MenuItem1: TMenuItem
+        Action = FilePrint1
+      end
+      object Separator5: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem5: TMenuItem
+        Action = FileExit1
+      end
+    end
+    object MenuEdit: TMenuItem
+      Caption = '&Edit'
+      object MenuEditUndo1: TMenuItem
+        Caption = '&Undo'
+        Hint = 'Ctrl+Z'
+        ShortCut = 16474
+        OnClick = MenuEditUndo1Click
+      end
+      object MenuEditRedo1: TMenuItem
+        Caption = '&Redo'
+        Hint = 'Ctrl+Y'
+        ShortCut = 16473
+        OnClick = MenuEditRedo1Click
+      end
+      object Separator1: TMenuItem
+        Caption = '-'
+      end
+      object MenuEditCut1: TMenuItem
+        Action = EditCut1
+      end
+      object MenuEditCopy1: TMenuItem
+        Action = EditCopy1
+      end
+      object MenuEditPaste1: TMenuItem
+        Action = EditPaste1
+      end
+      object MenuEditDelete1: TMenuItem
+        Action = EditDelete1
+      end
+      object Separator2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem15: TMenuItem
+        Action = EditFind1
+      end
+      object MenuItem16: TMenuItem
+        Action = EditFindNext1
+      end
+      object MenuItem7: TMenuItem
+        Action = EditFindPrev1
+      end
+      object MenuEditReplace1: TMenuItem
+        Action = EditReplace1
+        Hint = 'Ctrl+H'
+      end
+      object Separator3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem17: TMenuItem
+        Action = EditSelectAll1
+      end
+      object MenuItem18: TMenuItem
+        Action = EditInsertDateTime
+      end
+    end
+    object MenuFormat: TMenuItem
+      Caption = 'F&ormat'
+      object MenuFormatWordwrap: TMenuItem
+        Action = FormatWordwrap
+        AutoCheck = True
+      end
+      object MenuFormatFont: TMenuItem
+        Action = FormatFontEdit1
+      end
+    end
+    object MenuView: TMenuItem
+      Caption = '&View'
+      object MenuZoom: TMenuItem
+        Caption = 'Zoom'
+        object MenuItem6: TMenuItem
+          Action = ViewZoomIn
+        end
+        object MenuItem8: TMenuItem
+          Action = ViewZoomOut
+        end
+        object MenuItem9: TMenuItem
+          Action = ViewZoomReset
+        end
+      end
+      object MenuViewStatusbar: TMenuItem
+        Action = ViewStatusBarShowHide
+        AutoCheck = True
+      end
+    end
+    object MenuEx: TMenuItem
+      Caption = 'Ex'
+      object MenuItem11: TMenuItem
+        Action = ExIsDarkTheme
+        AutoCheck = True
+      end
+      object Separator8: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem10: TMenuItem
+        Action = ExReplaceWithCaretPos
+        AutoCheck = True
+      end
+      object Separator6: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem24: TMenuItem
+        Action = ExAutoBackupEnabled
+        AutoCheck = True
+        ShowAlwaysCheckable = True
+      end
+      object MenuItem25: TMenuItem
+        Action = ExOpenBackupFolder
+      end
+    end
+    object MenuHelp: TMenuItem
+      Caption = '&Help'
+      object MenuItem23: TMenuItem
+        Action = AboutAction1
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 349
+    Top = 33
+    object ViewStatusBarShowHide: TAction
+      Category = 'View'
+      AutoCheck = True
+      Caption = '&Status bar'
+      Checked = True
+      OnExecute = ViewStatusBarShowHideExecute
+    end
+    object FormatWordwrap: TAction
+      Category = 'Format'
+      AutoCheck = True
+      Caption = '&Wordwrap'
+      Checked = True
+      OnExecute = FormatWordwrapExecute
+    end
+    object ViewZoomIn: TAction
+      Category = 'View'
+      Caption = 'Zoom &In'
+      Hint = 'CRTL + UP'
+      OnExecute = ViewZoomInExecute
+      ShortCut = 16422
+    end
+    object ViewZoomOut: TAction
+      Category = 'View'
+      Caption = 'Zoom &Out'
+      Hint = 'CTRL + DOWN'
+      OnExecute = ViewZoomOutExecute
+      ShortCut = 16424
+    end
+    object ViewZoomReset: TAction
+      Category = 'View'
+      Caption = '&Restore Default Zoom'
+      Hint = 'Ctrl+0'
+      OnExecute = ViewZoomResetExecute
+      ShortCut = 16432
+    end
+    object FileExit1: TFileExit
+      Category = 'File'
+      Caption = 'E&xit'
+      Hint = 'Exit'
+    end
+    object FormatFontEdit1: TFontEdit
+      Category = 'Format'
+      Caption = '&Font ...'
+      Dialog.MinFontSize = 0
+      Dialog.MaxFontSize = 0
+      BeforeExecute = FormatFontEdit1BeforeExecute
+      OnAccept = FormatFontEdit1Accept
+    end
+    object FileNew1: TAction
+      Category = 'File'
+      Caption = '&New'
+      OnExecute = FileNew1Execute
+      ShortCut = 16462
+    end
+    object FilePageSetup1: TAction
+      Category = 'File'
+      Caption = 'Page Set&up...'
+      OnExecute = FilePageSetup1Execute
+    end
+    object FilePrint1: TAction
+      Category = 'File'
+      Caption = '&Print...'
+      Hint = 'Ctrl+P'
+      OnExecute = FilePrint1Execute
+      ShortCut = 16464
+    end
+    object FileSave1: TAction
+      Category = 'File'
+      Caption = '&Save'
+      Hint = 'Ctrl + S'
+      OnExecute = FileSave1Execute
+      ShortCut = 16467
+    end
+    object AboutAction1: TAction
+      Category = 'Help'
+      Caption = '&About'
+      OnExecute = AboutAction1Execute
+    end
+    object FileNewWindow1: TAction
+      Category = 'File'
+      Caption = 'New &Window'
+      OnExecute = FileNewWindow1Execute
+      ShortCut = 24654
+    end
+    object EditCopy1: TEditCopy
+      Category = 'Edit'
+      Caption = '&Copy'
+      DisableIfNoHandler = False
+      Hint = 'Ctrl+C'
+      ShortCut = 16451
+    end
+    object EditCut1: TEditCut
+      Category = 'Edit'
+      Caption = 'Cu&t'
+      DisableIfNoHandler = False
+      Hint = 'Ctrl+X'
+      ShortCut = 16472
+    end
+    object EditPaste1: TEditPaste
+      Category = 'Edit'
+      Caption = '&Paste'
+      DisableIfNoHandler = False
+      Hint = 'Ctrl+V'
+      ShortCut = 16470
+    end
+    object EditDelete1: TEditDelete
+      Category = 'Edit'
+      Caption = '&Delete'
+      DisableIfNoHandler = False
+      Hint = 'Del'
+      ShortCut = 46
+    end
+    object EditFind1: TSearchFind
+      Category = 'Edit'
+      Caption = '&Find...'
+      Dialog.Options = [frDown, frFindNext, frMatchCase, frDisableMatchCase, frDisableWholeWord, frEntireScope]
+      Dialog.OnFind = TFindDialogFind
+      ShortCut = 16454
+      BeforeExecute = EditFind1BeforeExecute
+    end
+    object EditFindNext1: TAction
+      Category = 'Edit'
+      Caption = 'Find &Next'
+      Hint = 'F3'
+      OnExecute = FindNext
+      ShortCut = 114
+    end
+    object EditSelectAll1: TEditSelectAll
+      Category = 'Edit'
+      Caption = 'Select &All'
+      Hint = 'Select All'
+      ShortCut = 16449
+    end
+    object EditInsertDateTime: TAction
+      Category = 'Edit'
+      Caption = 'Time/&Date'
+      OnExecute = EditInsertDateTimeExecute
+      ShortCut = 116
+    end
+    object EditFindPrev1: TAction
+      Category = 'Edit'
+      Caption = 'Find Pre&vious'
+      Hint = 'Shift + F3'
+      OnExecute = FindPrev
+      ShortCut = 8306
+    end
+    object EditReplace1: TSearchReplace
+      Category = 'Edit'
+      Caption = 'Rep&lace'
+      Dialog.OnClose = TReplaceDialogClose
+      Dialog.Options = [frDown, frFindNext, frMatchCase, frDisableMatchCase, frDisableWholeWord, frEntireScope, frHidePromptOnReplace]
+      Dialog.OnFind = TReplaceDialogFind
+      Dialog.OnReplace = TReplaceDialogReplace
+      ShortCut = 16456
+      BeforeExecute = EditReplace1BeforeExecute
+    end
+    object FileOpen1: TAction
+      Category = 'File'
+      Caption = '&Open...'
+      OnExecute = FileOpen1Execute
+      ShortCut = 16463
+    end
+    object FileSaveAs1: TAction
+      Caption = 'Save &As...'
+      OnExecute = FileSaveAs1Execute
+      ShortCut = 16467
+    end
+    object ExAutoBackupEnabled: TAction
+      Category = 'Ex'
+      AutoCheck = True
+      Caption = 'Auto &Backup'
+      Checked = True
+      DisableIfNoHandler = False
+      OnExecute = ExAutoBackupEnabledExecute
+    end
+    object ExOpenBackupFolder: TAction
+      Category = 'Ex'
+      Caption = '&Open Backup Folder...'
+      OnExecute = ExOpenBackupFolderExecute
+    end
+    object ExReplaceWithCaretPos: TAction
+      Category = 'Ex'
+      AutoCheck = True
+      Caption = '&Show caret pos. instead of LnCol'
+      Checked = True
+      DisableIfNoHandler = False
+      OnExecute = ExReplaceWithCaretPosExecute
+    end
+    object ExIsDarkTheme: TAction
+      Category = 'Ex'
+      AutoCheck = True
+      Caption = '&Dark Theme'
+      OnExecute = ExIsDarkThemeExecute
+      ShortCut = 16461
+    end
+  end
+  object ApplicationProperties1: TApplicationProperties
+    CaptureExceptions = False
+    ExceptionDialog = aedOkMessageBox
+    ShowButtonGlyphs = sbgSystem
+    Title = 'NotepadEx'
+    OnIdle = ApplicationProperties1Idle
+    Left = 64
+    Top = 33
+  end
+  object PrintDialog1: TPrintDialog
+    Left = 176
+    Top = 120
+  end
+  object PageSetupDialog1: TPageSetupDialog
+    MarginLeft = 2000
+    MarginTop = 2000
+    MarginRight = 2000
+    MarginBottom = 2000
+    Options = [psoDefaultMinMargins, psoMargins, psoMinMargins]
+    Left = 280
+    Top = 120
+  end
+  object CmdLineTimer: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = CmdLineTimerTimer
+    Left = 454
+    Top = 189
+  end
+  object ReplaceDialog1: TReplaceDialog
+    Options = [frDown, frReplace, frReplaceAll, frHidePromptOnReplace]
+    Left = 518
+    Top = 68
+  end
+  object AutoBackupTimer: TTimer
+    Enabled = False
+    Interval = 2000
+    OnTimer = AutoBackupTimerTimer
+    Left = 209
+    Top = 269
+  end
+  object LoadBackupTimer: TTimer
+    Enabled = False
+    OnTimer = LoadBackupTimerTimer
+    Left = 518
+    Top = 411
+  end
+  object reg: TEasyRegistry
+    RootKey = HKEY_CURRENT_USER
+    Left = 201
+    Top = 390
+  end
+end
